@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar-custom {
+  padding: 20px;
+  background-color: #303030;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin: 10px 30px; 
+}
+
+.navbar-brand .logo {
+  height: 70px; 
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 10px; 
+}
+
+.navbar-nav .nav-link {
+  color: #ffbd59;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #FFFF;
+}
+
+.navbar-toggler {
+  border: none;
+  background: none;
+  color: #ffbd59;
+  font-size: 24px;
+}

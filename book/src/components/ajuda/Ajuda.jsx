@@ -1,7 +1,4 @@
 import "./Ajuda.css";
-import React from 'react';
-import backgroundImg from './assets/background.jpg';
-
 
 const Ajuda = () => {
 

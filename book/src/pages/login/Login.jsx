@@ -1,6 +1,5 @@
 import { Button } from "react-bootstrap";
 import "./Login.css";
-import logo from "../assets/img/logo.png";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -33,7 +32,6 @@ function Login() {
     return(
         <main>
             <form className="form-section" onSubmit={handleSubmit(onSubmit)}>
-            <img src={logo} alt="Logo" style={{ borderRadius: '50%',  width: '100px', height: '100px' }} />    
             <h1>Faça seu login</h1>
             <div>
                 <label htmlFor="email">Email</label>

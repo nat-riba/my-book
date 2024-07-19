@@ -8,7 +8,7 @@
 }
 
 .bgSection {
-    background: #ffff url("../assets/img/404-img.png") no-repeat right top;
+    background: #ffff url("../../assets/img/404-img.png") no-repeat right top;
     /* margin-right: 100px; */
     padding: 10rem;
     border-radius: 0.5rem;

@@ -12,11 +12,12 @@ function App() {
     <>
       <BrowserRouter>
         { <Menu />}
-        { <Ajuda />}
+        {/* { <Ajuda />} */}
         <Routes>
-        <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/ajuda" element={<Ajuda />} />
 
+        <Route path="*" element={<NotFound />} />
         </Routes>
         {/* <Rodape /> */}
 

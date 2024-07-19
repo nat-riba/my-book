@@ -1,9 +1,8 @@
-import "./Ajuda.css";
-import React from 'react';
-import backgroundImg from './assets/background.jpg';
 
 
-const Ajuda = () => {
+
+
+const Ajuda=() => {
 
   return (
 
@@ -23,6 +22,7 @@ const Ajuda = () => {
           <li>Clique em um livro para ver mais detalhes.</li>
           <li>Adicione livros à sua lista de desejos.</li>
         </ul>
+        <img src={book} alt="imagem de livros"/>
         </div>
   )
 };

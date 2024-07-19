@@ -3,21 +3,36 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f8f9fa;
+    text-align: center;
 }
 
 .bgSection {
-    background: #ffffff url("https://png.pngtree.com/png-clipart/20210829/original/pngtree-error-404-page-not-found-png-image_6681621.jpg") repeat right top;
-    padding: 10px;
+    background: #ffff url("../../assets/img/404-img.png") no-repeat right top;
+    /* margin-right: 100px; */
+    padding: 10rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.img-logo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px; 
+}
+
+.bgSection h1 {
     font-size: 3rem;
-    margin: 20px 0;
+    color: #343a40;
 }
 
-p {
+.bgSection p {
     font-size: 1.5rem;
-    margin: 10px 0;
+    color: #6c757d;
+}
+
+.bgSection .btn {
+    margin-top: 1rem;
 }
 
 

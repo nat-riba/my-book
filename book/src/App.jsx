@@ -3,6 +3,7 @@ import NotFound from "./pages/notfound/NotFound";
 import Login from "./pages/login/Login";
 import { Toaster } from "react-hot-toast";
 import Menu from "./components/menu/Menu";
+import Footer from "./components/footer/Footer";
 import Ajuda from "./components/ajuda/Ajuda";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Home from "./pages/home/Home";
@@ -22,8 +23,7 @@ function App() {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-        {/* <Rodape /> */}
-
+        <Footer />
       </BrowserRouter>
       <Toaster position="bottom-right" />
     </>

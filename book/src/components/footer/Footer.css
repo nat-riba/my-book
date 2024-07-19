@@ -1,11 +1,11 @@
-.footer {
-    background-color: #303030;
-    color: #ffbd59;
+  .footer {
+    background-color: #303030; /* Cor de fundo do footer */
+    color: #ffbd59; /* Cor do texto do footer */
+    padding: 20px;
     text-align: center;
-    padding: 10px 0;
-  }
-  
-  .footer p {
-    margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* Para garantir que o footer esteja sobre outros elementos */
   }
   

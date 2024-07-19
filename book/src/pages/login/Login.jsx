@@ -34,7 +34,7 @@ function Login() {
         <main className="main-login">
             <form className="form-section" onSubmit={handleSubmit(onSubmit)}>
             <h1>Faça seu login com:</h1>
-            <Button variant="outline-danger" className="mt-1 w-100" type="button" onClick={handleEntrarGoogle}>
+            <Button variant="outline-danger" className="mt-1 w-80 shadow-lg" type="button" onClick={handleEntrarGoogle}>
                  Google
             </Button>
             <hr />
@@ -67,7 +67,7 @@ function Login() {
                 />
                 {errors.senha && <small className="invalid">{errors.senha.message}</small>}
             </div>
-            <Button variant="outline-dark" className="mt-2 w-100" type="submit">Entrar</Button>
+            <Button variant="outline-dark" className="mt-2 w-80 shadow-lg" type="submit">Entrar</Button>
             </form>
             
         </main>

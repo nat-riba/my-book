@@ -11,8 +11,8 @@ function NotFound() {
                     <h1>Ops!</h1>
                     <p>404.</p>
                     <p>Página não encontrada.</p>
-                    <Link to="/login" className='text-decoration-none'> 
-                    <Button variant="outline-dark">Voltar para Home</Button>
+                    <Link to="/" className='text-decoration-none'> 
+                    <Button variant="outline-dark" className="mt-2 w-80 shadow-lg">Voltar para Home</Button>
                     </Link>
                 </Col>
             </Container>

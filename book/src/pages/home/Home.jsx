@@ -1,6 +1,3 @@
-//Fotos
-//Infos livro
-//Catálogo
 import Catalogo from "../catalog/Catalog.jsx";
 
 function Home() {

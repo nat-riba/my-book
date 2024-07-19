@@ -20,7 +20,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/ajuda" element={<Ajuda />} />
           <Route path="/cadastro" element={<Cadastro />} />
-
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

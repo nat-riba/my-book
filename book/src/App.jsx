@@ -4,6 +4,7 @@ import Login from "./pages/login/Login";
 import { Toaster } from "react-hot-toast";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
+import Ajuda from "./components/ajuda/Ajuda";
 
 
 
@@ -14,7 +15,8 @@ function App() {
         <Menu />
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/ajuda" element={<Ajuda />} />
+          <Route path="*" element={<NotFound />} /> 
         </Routes>
         <Footer />
       </BrowserRouter>

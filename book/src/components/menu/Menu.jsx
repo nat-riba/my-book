@@ -24,7 +24,7 @@ function Menu() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/catalog">
-                Catalog
+                Catalogo
               </Link>
             </li>
             <li className="nav-item">

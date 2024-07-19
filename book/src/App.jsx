@@ -5,18 +5,15 @@ import { Toaster } from "react-hot-toast";
 import Menu from "./components/menu/Menu";
 import Ajuda from "./components/ajuda/Ajuda";
 
-
-
 function App() {
   return(
     <>
       <BrowserRouter>
         { <Menu />}
-        { <Ajuda />}
         <Routes>
-        <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
-
+        <Route path="/ajuda" element={<Ajuda />} />
+        <Route path="*" element={<NotFound />} />
         </Routes>
         {/* <Rodape /> */}
 

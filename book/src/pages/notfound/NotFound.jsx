@@ -1,7 +1,6 @@
 import { Button, Container, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NotFound.css";
-// import logo from "../assets/img/logo.png";
 
 
 function NotFound() {

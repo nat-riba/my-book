@@ -11,6 +11,8 @@
     background: #ffff url("../assets/img/404-img.png") no-repeat right top;
     /* margin-right: 100px; */
     padding: 10rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .img-logo {
@@ -19,14 +21,18 @@
     height: 150px; 
 }
 
-h1 {
+.bgSection h1 {
     font-size: 3rem;
-    margin: 20px 0;
+    color: #343a40;
 }
 
-p {
+.bgSection p {
     font-size: 1.5rem;
-    margin: 10px 0;
+    color: #6c757d;
+}
+
+.bgSection .btn {
+    margin-top: 1rem;
 }
 
 

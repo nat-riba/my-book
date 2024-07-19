@@ -33,10 +33,8 @@ function Login() {
     return(
         <main className="main-login">
             <form className="form-section" onSubmit={handleSubmit(onSubmit)}>
-            <h1>Faça seu login com</h1>
-            <Button variant="outline-danger" className="mt-1 w-100" type="button" onClick={handleEntrarGoogle}>Google</Button>
-            <hr />
-            <h1>Ou preencha seus dados abaixo:</h1>
+            <img src={logo} alt="Logo" style={{ borderRadius: '50%',  width: '100px', height: '100px' }} />    
+            <h1>Faça seu login</h1>
             <div>
                 <label htmlFor="email">Email</label>
                 <input 

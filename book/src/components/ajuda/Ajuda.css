@@ -1,0 +1,39 @@
+.catalogo {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.catalogo h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.ajuda-conteudo {
+    margin-top: 20px;
+}
+
+.ajuda-conteudo h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.ajuda-conteudo p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ajuda-conteudo ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ajuda-conteudo li {
+    margin-bottom: 5px;
+}

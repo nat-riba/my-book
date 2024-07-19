@@ -14,14 +14,16 @@ function App() {
   return(
     <>
       <BrowserRouter>
-        <Menu />
+       <div className="content">
+       <Menu />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/ajuda" element={<Ajuda />} />
-          <Route path="/cadastro" element={<Cadastro />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+       </div>
         <Footer />
       </BrowserRouter>
       <Toaster position="bottom-right" />

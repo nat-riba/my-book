@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/img/logo.png"
 
 function Menu() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black">
         <div className="container-fluid">
         <Link className="navbar-brand" to="/">Book Catalog</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +23,7 @@ function Menu() {
             </ul>
         </div>
         </div>
+        <img src={logo} alt="Logo" style={{ borderRadius: '50%',  width: '150px', height: '150px' }} />
     </nav>
   );
 }

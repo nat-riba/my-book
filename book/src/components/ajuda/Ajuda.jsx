@@ -1,6 +1,7 @@
 import "./Ajuda.css";
 
-const Ajuda = () => {
+
+function Ajuda() {
 
   return (
 
@@ -21,7 +22,8 @@ const Ajuda = () => {
           <li>Adicione livros à sua lista de desejos.</li>
         </ul>
         </div>
-  )
-};
+
+  );
+}
 
 export default Ajuda;

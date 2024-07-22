@@ -36,7 +36,7 @@ const AddBookForm = () => {
           {errors.title && <small className="invalid">{errors.title.message}</small>}
         </div>
         <div>
-          <label htmlFor="genero" >Gênero:</label>
+          <label htmlFor="genero">Gênero:</label>
           <input
             type="text"
             id="genero"

@@ -21,29 +21,28 @@ const Catalog = () => {
     return (
         <main>    
             <h1 className="text-center">Seu catálogo de livros!</h1> 
-            <hr />       
-            <Container className="mt-5">
-                {books.map(book => (
-                    <section key={book.id} className="my-2 p-1">
-                        <Card className="my-2 p-3">
-                            <Card.Title>{book.titulo}</Card.Title>
-                            <Card.Text>
-                                <p><strong>Autor:</strong> {book.autor}</p>
-                                <p><strong>Gênero:</strong> {book.genero}</p>
-                                <p><strong>Ano:</strong> {book.ano}</p>
-                            </Card.Text>
-                        </Card>
-                    </section>
-                ))}
-                <hr />
-                <CardFooter className="mt-5">
-                    <Card.Title>Sua biblioteca, suas regras:</Card.Title>
-                    <Card.Text>
-                    <p><strong>Solicite aqui novos títulos:</strong> Se a aventura que você procura ainda não estiver disponível, não se preocupe! Utilize nosso formulário para solicitar a compra de novos livros</p>
-                    </Card.Text>
-                    <Link className="btn btn-outline-dark my-1 w-80 shadow-lg" to="/catalog/add">Solicite seu livro</Link>
-                </CardFooter>
-            </Container>
+            <h2>Sua biblioteca, suas regras:</h2>
+            <p><strong>Solicite aqui novos títulos:</strong></p>
+            <Link className="btn btn-outline-dark my-1 w-80 shadow-lg" to="/catalog/add">Solicite seu livro</Link>
+            <hr />     
+            <div className="container">
+                <Container className="mt-5">
+                    <div className="Card">
+                        {books.map(book => (
+                            <section key={book.id} className="my-2 p-1">
+                                <Card className="my-2 p-3">
+                                    <Card.Title className="Card-Title">{book.titulo}</Card.Title>
+                                    <Card.Text>
+                                        <p><strong>Autor:</strong> {book.autor}</p>
+                                        <p><strong>Gênero:</strong> {book.genero}</p>
+                                        <p><strong>Ano:</strong> {book.ano}</p>
+                                    </Card.Text>
+                                </Card>
+                            </section>
+                        ))}
+                    </div>
+                </Container>
+            </div>  
         </main>
     );
 };

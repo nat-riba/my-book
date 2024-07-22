@@ -1,10 +1,31 @@
-@import "bootstrap/dist/css/bootstrap.min.css"; 
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 
-html, body, #root {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-  }
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+p,
+a,
+li {
+  font-weight: 400;
+  font-size: 20px;
+}

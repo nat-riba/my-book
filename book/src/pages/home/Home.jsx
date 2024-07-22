@@ -1,4 +1,3 @@
-import Catalogo from "../catalog/Catalog.jsx";
 import "./Home.css";
 import {Button} from "react-bootstrap";
 

@@ -14,6 +14,7 @@ import Footer from "./components/footer/Footer";
 import AddBook from "./pages/addbook/AddBook";
 import NotFound from "./pages/notfound/NotFound";
 import Loader from "./components/loader/Loader";
+import EditBook from "./pages/editbook/EditBook";
 
 
 
@@ -51,6 +52,7 @@ function App() {
             <Route path="/ajuda" element={<Ajuda />} />
             <Route path="/catalog" element={<Catalog />} />
             <Route path="/catalog/add" element={<AddBook />} />
+            <Route path="/catalog/edit" element={<EditBook />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

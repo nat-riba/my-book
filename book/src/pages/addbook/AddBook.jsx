@@ -1,6 +1,8 @@
 import { addBook } from "../../firebase/bookService";
 import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast" ;
 import "./AddBook.css";
 
@@ -9,21 +11,29 @@ import "./AddBook.css";
 const AddBookForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = async (data) => {
-    try {
-      await addBook(data);
-      toast.success('OK! Em breve disponível!')
-    } catch (error) {
-      toast.error('Erro ao adicionar o livro: ' + error.message);
-    }
+  const usuario = useContext(UsuarioContext);
 
-    addBook(newBook);
+  const navigate = useNavigate();
+
+  function safeBook(data) {
+    data.idUsuario = usuario.uid;
+
+    addBook(data).then(() => {
+      toast.success('OK! Em breve disponível!');
+      navigate("/catalog");
+    }).catch(() => {
+      toast.error('Erro ao adicionar o livro');
+    });
+  }
+
+
+  addBook(newBook);
  
-  };
+  // };
 
   return (
     <main className="main-add">
-      <form className="form-section shadow-lg" onSubmit={handleSubmit(onSubmit)}>
+      <form className="form-section shadow-lg" onSubmit={handleSubmit(safeBook)}>
         <h1>Solicite seu livro</h1>
         <div>
           <label htmlFor='titulo'>Título:</label>

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { getBooksByUser } from "../../firebase/bookService"; // Importa a função getBooks que busca os livros
+import { getBooksByUser, deleteBook } from "../../firebase/bookService"; // Importa a função getBooks que busca os livros
 import "./Catalog.css"; 
 import { Link, Navigate } from "react-router-dom";
 import { Card, Container } from "react-bootstrap";
@@ -21,6 +21,18 @@ const Catalog = () => {
         }
     }
 
+    function deleteBook(id) {
+        // True  = apagar tarefa or false = não fazer nada
+        const deletar = confirm("Tem certeza?");
+        if (deletar) {
+            deleteTarefa(id).then(() => {
+                toast.success("Livro removido com sucesso!");
+                // Trazer a lista de livros atualizada
+                carregarDados();
+            });
+        }
+    }
+
     useEffect(() => {
         carregarDados();
     }, []);
@@ -31,13 +43,24 @@ const Catalog = () => {
         return <Navigate to="/login" />
     }
 
+    const genero = {
+        "Romance": "primary",
+        "Fantasia": "warning",
+        "Ficção": "success",
+        "Religioso": "info" ,
+        "outros": "danger",
+    };
+
     return (
         <main>    
             <h1 className="text-center">Seu catálogo de livros!</h1> 
             <h2>Sua biblioteca, suas regras:</h2>
             <p><strong>Solicite aqui novos títulos:</strong></p>
             <Link className="btn btn-outline-dark my-1 w-80 shadow-lg" to="/catalog/add">Solicite seu livro</Link>
-            <hr />     
+            <hr />   
+
+            {livros ? 
+            
             <div className="container">
                 <Container className="mt-5">
                     <div className="Card">
@@ -50,12 +73,20 @@ const Catalog = () => {
                                         <p><strong>Gênero:</strong> {book.genero}</p>
                                         <p><strong>Ano:</strong> {book.ano}</p>
                                     </Card.Text>
+                                    <div>
+                                    {livro.concluido ? <Badge bg="success" className="m-1">Concluído</Badge> : <Badge bg="warning">Pendente</Badge>}
+                                    <Badge bg={genero[livro.genero]} className="m-1">{livro.genero}</Badge>
+                                </div>
+                                <Button variant="outline-dark m-1" onClick={() => {
+                                    navigate(`/C/editar/${tarefa.id}`);
+                                }}>Editar</Button>
+                                <Button variant="outline-danger m-1" onClick={() => deletarTarefa(tarefa.id)}>Excluir</Button>
                                 </Card>
                             </section>
                         ))}
                     </div>
                 </Container>
-            </div>  
+            </div>  : <Loader />}  
         </main>
     );
 };

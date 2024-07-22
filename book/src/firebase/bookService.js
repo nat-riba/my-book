@@ -2,7 +2,7 @@ import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, query, updateDoc, 
 import { db } from "./config";
 
 // Create - Cria uma referência para a coleção no Firestore, gerando uma coleção chamada "books"
-export const booksCol = collection(db, "books");
+export const booksCol = collection(db, "bookcatalog");
 
 // Função para adicionar um livro
 export async function addBook(data) { 

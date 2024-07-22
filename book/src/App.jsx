@@ -7,6 +7,8 @@ import Footer from "./components/footer/Footer";
 import Ajuda from "./components/ajuda/Ajuda";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Home from "./pages/home/Home";
+import AddBook from "./pages/addbook/AddBook";
+import Catalog from "./pages/catalog/Catalog";
 
 
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/ajuda" element={<Ajuda />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/catalog/add" element={<AddBook />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
        </div>

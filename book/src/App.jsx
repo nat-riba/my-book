@@ -8,9 +8,8 @@ import Login from "./pages/login/Login";
 import Ajuda from "./components/ajuda/Ajuda";
 import Menu from "./components/menu/Menu";
 import Footer from "./components/footer/Footer";
-import Ajuda from "./components/ajuda/Ajuda";
-import Cadastro from "./pages/cadastro/Cadastro";
-import Home from "./pages/home/Home";
+import AddBook from "./pages/addbook/AddBook";
+import NotFound from "./pages/notfound/NotFound";
 
 
 

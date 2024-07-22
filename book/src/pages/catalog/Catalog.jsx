@@ -2,15 +2,20 @@ import { useContext, useEffect, useState } from "react";
 import { getBooksByUser, deleteBook } from "../../firebase/bookService"; // Importa a função getBooks que busca os livros
 import "./Catalog.css"; 
 import { Link, Navigate } from "react-router-dom";
-import { Card, Container } from "react-bootstrap";
+import { Card, Container, Badge, Button } from "react-bootstrap";
 import { UsuarioContext } from "../../contexts/UsuarioContext";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast" ;
+
 
 
 const Catalog = () => {
     const [books, setBooks] = useState([]); // Estado para armazenar os livros
+    
+    const [favoritos, setFavoritos] = useState([]);
 
     const usuario = useContext(UsuarioContext); // Recuperamos a info do usuário (logado = tem algo ou não logado = não tem)
+
     const navigate = useNavigate();
     // Função para carregar os livros quando o componente é montado
     function carregarDados() {
@@ -32,6 +37,17 @@ const Catalog = () => {
             });
         }
     }
+
+    function toggleFavorito(id) {
+        setFavoritos(prevFavoritos => {
+            if (prevFavoritos.includes(id)) {
+                return prevFavoritos.filter(favId => favId !== id);
+            } else {
+                return [...prevFavoritos, id];
+            }
+        });
+    }
+
 
     useEffect(() => {
         carregarDados();
@@ -59,9 +75,9 @@ const Catalog = () => {
             <Link className="btn btn-outline-dark my-1 w-80 shadow-lg" to="/catalog/add">Solicite seu livro</Link>
             <hr />   
 
-            {livros ? 
+         
             
-            <div className="container">
+            {books.length > 0 ? 
                 <Container className="mt-5">
                     <div className="Card">
                         {books.map(book => (
@@ -74,19 +90,27 @@ const Catalog = () => {
                                         <p><strong>Ano:</strong> {book.ano}</p>
                                     </Card.Text>
                                     <div>
-                                    {livro.concluido ? <Badge bg="success" className="m-1">Concluído</Badge> : <Badge bg="warning">Pendente</Badge>}
-                                    <Badge bg={genero[livro.genero]} className="m-1">{livro.genero}</Badge>
-                                </div>
-                                <Button variant="outline-dark m-1" onClick={() => {
-                                    navigate(`/C/editar/${tarefa.id}`);
-                                }}>Editar</Button>
-                                <Button variant="outline-danger m-1" onClick={() => deletarTarefa(tarefa.id)}>Excluir</Button>
+                                        {book.concluido ? <Badge bg="success" className="m-1">Concluído</Badge> : <Badge bg="warning" className="m-1">Pendente</Badge>}
+                                        <Badge bg={genero[book.genero]} className="m-1">{book.genero}</Badge>
+                                    </div>
+                                    <Button variant="outline-dark m-1" onClick={() => {
+                                        navigate(`/catalog/edit/${book.id}`);
+                                    }}>Editar</Button>
+                                    <Button variant="outline-danger m-1" onClick={() => deletarLivro(book.id)}>Excluir</Button>
+                                    <Button 
+                                        variant={favoritos.includes(book.id) ? "warning" : "outline-warning"} 
+                                        className="m-1" 
+                                        onClick={() => toggleFavorito(book.id)}
+                                    >
+                                        {favoritos.includes(book.id) ? "Desfavoritar" : "Favoritar"}
+                                    </Button>
                                 </Card>
                             </section>
                         ))}
                     </div>
-                </Container>
-            </div>  : <Loader />}  
+                </Container>  
+                : <p>Carregando livros...</p>
+            }  
         </main>
     );
 };

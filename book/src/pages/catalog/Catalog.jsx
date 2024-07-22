@@ -1,22 +1,35 @@
-import { useEffect, useState } from 'react';
-import { getBooks } from "../../firebase/bookService"; // Importa a função getBooks que busca os livros
+import { useContext, useEffect, useState } from "react";
+import { getBooksByUser } from "../../firebase/bookService"; // Importa a função getBooks que busca os livros
 import "./Catalog.css"; 
-import { Link } from "react-router-dom";
-import { Card, CardFooter, Container } from 'react-bootstrap';
+import { Link, Navigate } from "react-router-dom";
+import { Card, Container } from "react-bootstrap";
+import { UsuarioContext } from "../../contexts/UsuarioContext";
+import { useNavigate } from "react-router-dom";
+
 
 const Catalog = () => {
     const [books, setBooks] = useState([]); // Estado para armazenar os livros
 
+    const usuario = useContext(UsuarioContext); // Recuperamos a info do usuário (logado = tem algo ou não logado = não tem)
+    const navigate = useNavigate();
     // Função para carregar os livros quando o componente é montado
-    useEffect(() => {
-        const fetchBooks = async () => {
-            const fetchedBooks = await getBooks(); // Chama a função getBooks para buscar os livros
-            console.log(fetchedBooks);
-            setBooks(fetchedBooks); // Atualiza o estado com os livros buscados
-        };
+    function carregarDados() {
+        if(usuario) {
+            getBooksByUser(usuario.uid).then((resultados) => {
+                setBooks(resultados);
+            });
+        }
+    }
 
-        fetchBooks(); // Executa a função para buscar os livros
-    }, []); // O array vazio significa que isso só será executado uma vez, quando o componente for montado
+    useEffect(() => {
+        carregarDados();
+    }, []);
+
+     // Se o usuário não está logado
+     if(usuario === null) {
+        // Navegar para login
+        return <Navigate to="/login" />
+    }
 
     return (
         <main>    

@@ -26,7 +26,7 @@ function Login() {
     function handleEntrarGoogle() { // Autenticação google
         entrarGoogle().then(() => {
          toast.success("Bem-vindo (a)!");
-         navigate("/tarefas");
+         navigate("/catalog");
         });
     }
 

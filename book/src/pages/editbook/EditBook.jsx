@@ -106,6 +106,17 @@ function EditBook() {
                     />
                     {errors.year && <small className="invalid">{errors.year.message}</small>}
                 </div>
+                <div className="form-check">
+                    <input
+                        type="checkbox"
+                        id="concluido"
+                        className="form-check-input"
+                        {...register("concluido")}
+                    />
+                    <label htmlFor="concluido" className="form-check-label">
+                        Concluído?
+                    </label>
+                </div>
                 <Button variant="outline-dark" className="mt-2 w-80 shadow-lg" type="submit">
                     Atualizar Livro
                 </Button>

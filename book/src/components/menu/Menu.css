@@ -25,6 +25,7 @@
 .navbar-nav {
   display: flex;
   gap: 10px; 
+  
 }
 
 .navbar-nav .nav-link {

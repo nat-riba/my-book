@@ -5,26 +5,37 @@
     justify-content: center;
     height: 100vh;
     text-align: center;
-    background-color: #f0f0f0;
     padding: 20px;
 }
 
 .home h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #423f3f;
 }
 
 .home h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #423f3f;
 }
 
 .home p {
     font-size: 1.2rem;
     margin-bottom: 40px;
+    color: #423f3f;
 }
 
 .home Button {
     font-size: 1.2rem;
     padding: 10px 20px;
+    background-color: #ffbd59;
+    border-color: #303030;
+    color: #303030;
+}   
+
+.home Button:hover {
+    background-color: #303030;
+    border-color: #ffbd59;
+    color: #ffbd59;
 }

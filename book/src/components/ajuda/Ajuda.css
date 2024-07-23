@@ -1,20 +1,22 @@
 main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: calc(100vh - 112px);
 }
 
 .catalogo {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 20px;
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #ffbd59;
+    border: 1px solid #ffbd59;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .catalogo h1 {
-    color: #333;
-    font-size: 32px;
+
     margin-bottom: 20px;
 }
 
@@ -23,14 +25,8 @@ main {
 }
 
 .ajuda-conteudo h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
 
-.ajuda-conteudo p {
-    font-size: 16px;
-    line-height: 1.6;
+    margin-bottom: 10px;
 }
 
 .ajuda-conteudo ul {

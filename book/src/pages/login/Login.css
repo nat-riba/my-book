@@ -3,11 +3,10 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f8f9fa;
 }
 
 .form-section {
-    background-color: #fff;
+    background-color: #f5f0d6;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,10 +15,30 @@
     text-align: left;
 }
 
+
 .invalid {
-    color: red;
+    color: rgb(189, 18, 18);
     font-size: 0.875rem;
     margin-top: 0.25rem;
 }
 
 
+.custom-button {
+    font-size: 1.2rem;
+    padding: 10px 10px;
+    background-color: #ffbd59 !important;
+    border: 2px solid #303030 !important;
+    color: #303030 !important;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px; 
+    width: 100%; 
+}
+
+.custom-button:hover {
+    background-color: #303030 !important;
+    border-color: #ffbd59 !important;
+    color: #ffbd59 !important;
+}

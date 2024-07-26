@@ -11,6 +11,7 @@ function Catalog() {
     const [books, setBooks] = useState([]);
     const [favoritos, setFavoritos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [filtroTitulo, setFiltroTitulo] = useState('');
     const usuario = useContext(UsuarioContext);
     const navigate = useNavigate();
 
@@ -72,19 +73,30 @@ function Catalog() {
         "outros": "danger",
     };
 
+    const livrosFiltrados = books.filter(book =>
+        book.title.toLowerCase().includes(filtroTitulo.toLowerCase())
+    );
+
     return (
         <main>
             <h1 className="text-center">Seu catálogo de livros!</h1>
             <h2>Sua biblioteca, suas regras:</h2>
             <p><strong>Solicite aqui novos títulos:</strong></p>
             <Link to="/catalog/add" className="btn-1 my-1">Solicite seu livro</Link>
+            <input
+                type="text"
+                value={filtroTitulo}
+                onChange={e => setFiltroTitulo(e.target.value)}
+                placeholder="Seu catálogo: Filtrar por título..."
+                className="form-control my-3"
+            />
             <hr />
             {loading ? (
                 <Loader />
             ) : (
                 <Container className="mt-5">
-                    {books.length > 0 ? (
-                        books.map(book => (
+                    {livrosFiltrados.length > 0 ? (
+                        livrosFiltrados.map(book => (
                             <section key={book.id} className="my-2 p-1">
                                 <Card className="my-2 p-3">
                                     <Card.Title className="Card-Title">{book.title}</Card.Title>

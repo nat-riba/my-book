@@ -12,7 +12,7 @@ function Login() {
     const onSubmit = (data) => {
         loginUsuario(data.email, data.senha).then(() => {
             toast.success("Bem-vindo (a)!");
-            navigate("/tarefas");
+            navigate("/catalog");
         }).catch(() => {
             toast.error("Email e/ou senha incorreto!");
         });

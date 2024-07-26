@@ -14,7 +14,7 @@ function Cadastro() {
     const cadastrar = (data) => {
         cadastrarUsuario(data.nome, data.email, data.senha).then(() => {
             toast.success(`Bem-vindo (a)! ${data.nome}`);
-            navigate("/catalogo");
+            navigate("/catalog");
         }).catch((error) => {
             toast.error("Um erro inesperado aconteceu!");
         });
@@ -23,7 +23,7 @@ function Cadastro() {
     const handleEntrarGoogle = () => {
         entrarGoogle().then(() => {
          toast.success("Bem-vindo (a)!");
-         navigate("/catalogo");
+         navigate("/catalog");
         });
     }
 
@@ -55,10 +55,7 @@ function Cadastro() {
                         id="email"
                         className="form-control"
                         placeholder="Digite seu email"   
-                        {...register("email", {required: "Email inválido, tente novamente!", 
-                            pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/, 
-                            message: "Email inválido"}})
-                        }                     
+                        {...register("email", {required: "Email inválido, tente novamente!"})}                     
                     />
                     {errors.email && <small className="invalid">{errors.email.message}</small>}
                 </div>
